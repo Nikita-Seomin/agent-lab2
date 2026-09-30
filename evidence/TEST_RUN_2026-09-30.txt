@@ -1,0 +1,17 @@
+Команда:
+python -m unittest discover -s tests -v
+
+Результат:
+Ran 25 tests in 0.011s
+OK
+
+Состав:
+- 20 исходных/стендовых проверок
+- 5 самостоятельных негативных проверок evaluator
+
+Негативные проверки:
+1. wrong skill
+2. over budget
+3. fabricated resource
+4. wrong ticket_id
+5. validation from another proposal

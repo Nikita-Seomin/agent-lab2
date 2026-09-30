@@ -1,0 +1,21 @@
+Состояние пакета на 30.09.2026
+
+ПОДТВЕРЖДЕНО И ВКЛЮЧЕНО:
+- student.py: run_agent + evaluate;
+- 25/25 тестов проходят;
+- 5 дополнительных негативных проверок;
+- полный scripted test: 20 задач × 2 режима × 2 повтора = 80 эпизодов;
+- scripted fixed: 24/40 (60%), 4.2 шага, 3.6 tool calls;
+- scripted agent: 40/40 (100%), 5.6 шага, 4.6 tool calls;
+- разбиение по 5 классам;
+- JSON/JSONL полных scripted-трасс, CSV и run_config;
+- 3 контролируемых failure examples;
+- agent_prompt.txt, prompts.md, README.md, report.md;
+- RUN_EVIDENCE.md и evidence/TEST_RUN_2026-09-30.txt;
+- исходный исследовательский DOCX в evidence/research_source.docx;
+- дополнительный повторный scripted-прогон в results_scripted_test_verified/.
+
+НЕ ВЫПОЛНЕНО:
+- обязательный реальный LLM-прогон 20 test × 2 режима × 2 повтора = 80 эпизодов.
+Причина: в доступной среде не было MAS_LLM endpoint/model/API key или локального LLM-сервера.
+Scripted-метрики не подменяют LLM-метрики.

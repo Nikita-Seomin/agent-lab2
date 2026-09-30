@@ -1,0 +1,9 @@
+{
+  "impl": "student",
+  "policy": "scripted",
+  "split": "test",
+  "mode": "all",
+  "repeats": 2,
+  "max_steps": 12,
+  "out": "/mnt/data/lab02_verify"
+}

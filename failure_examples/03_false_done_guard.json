@@ -1,0 +1,60 @@
+{
+  "case_id": "test_01",
+  "result": {
+    "status": "budget_exhausted",
+    "question": "",
+    "steps": 1,
+    "history": [
+      {
+        "step": 1,
+        "raw": "{\"type\": \"finish\", \"status\": \"done\", \"question\": \"\"}",
+        "action": {
+          "type": "finish",
+          "status": "done",
+          "question": ""
+        },
+        "observation": {
+          "ok": false,
+          "error": "finish_without_validation"
+        }
+      }
+    ],
+    "state": {
+      "ticket": {
+        "id": "T-test-01",
+        "skill": "linux",
+        "budget": 100
+      },
+      "resources": [
+        {
+          "id": "R0",
+          "skills": [
+            "linux"
+          ],
+          "cost": 35,
+          "available": true
+        },
+        {
+          "id": "R1",
+          "skills": [
+            "linux"
+          ],
+          "cost": 55,
+          "available": true
+        },
+        {
+          "id": "R2",
+          "skills": [
+            "design"
+          ],
+          "cost": 10,
+          "available": true
+        }
+      ],
+      "proposal": null,
+      "validation": null,
+      "version": 0
+    }
+  },
+  "success": false
+}

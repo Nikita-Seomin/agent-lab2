@@ -1,0 +1,139 @@
+{
+  "status": "model_error",
+  "question": "",
+  "steps": 2,
+  "history": [
+    {
+      "step": 1,
+      "raw": "{\"type\":\"tool\",\"name\":\"read_ticket\",\"args\":{}}",
+      "action": {
+        "type": "tool",
+        "name": "read_ticket",
+        "args": {}
+      },
+      "observation": {
+        "ok": true,
+        "ticket": {
+          "id": "T-test-11",
+          "skill": "sql",
+          "budget": 100
+        }
+      }
+    },
+    {
+      "step": 2,
+      "observation": {
+        "ok": false,
+        "error": "model_error",
+        "exception_type": "HTTPError"
+      }
+    }
+  ],
+  "state": {
+    "ticket": {
+      "id": "T-test-11",
+      "skill": "sql",
+      "budget": 100
+    },
+    "resources": [
+      {
+        "id": "R0",
+        "skills": [
+          "sql"
+        ],
+        "cost": 37,
+        "available": true
+      },
+      {
+        "id": "R1",
+        "skills": [
+          "sql"
+        ],
+        "cost": 57,
+        "available": true
+      },
+      {
+        "id": "R2",
+        "skills": [
+          "design"
+        ],
+        "cost": 10,
+        "available": true
+      }
+    ],
+    "proposal": null,
+    "validation": null,
+    "version": 0
+  },
+  "metrics": {
+    "case_id": "test_11",
+    "category": "normal",
+    "mode": "agent",
+    "policy": "llm",
+    "repeat": 1,
+    "success": 0,
+    "status": "model_error",
+    "steps": 2,
+    "tool_calls": 1,
+    "blocked_actions": 0,
+    "errors": 1,
+    "elapsed_ms": 13621.05,
+    "prompt_tokens": null,
+    "completion_tokens": null,
+    "model_calls": 2
+  },
+  "model": "gpt-6-sol",
+  "temperature": 0.2,
+  "requests": [
+    {
+      "request": {
+        "model": "gpt-6-sol",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Ты управляешь учебной службой заявок. На каждом шаге верни ровно один JSON без Markdown и пояснений.\nИнструменты:\nread_ticket, search_policy, list_resources, validate_assignment: args={}\npropose_assignment: args={\"resource_id\":\"идентификатор ресурса\"}\nДействие: {\"type\":\"tool\",\"name\":\"read_ticket\",\"args\":{}}\nЗавершение: {\"type\":\"finish\",\"status\":\"done\",\"question\":\"\"}\nДругие статусы завершения: needs_input, no_solution.\nСначала прочитай заявку и политику, затем ресурсы. Используй факты из результатов инструментов.\nПри неизвестном навыке завершай needs_input с конкретным вопросом, содержащим слово \"навык\" или \"skill\".\nПри известном навыке и отсутствии допустимых ресурсов завершай no_solution.\nДля решения достаточно любого доступного ресурса с нужным навыком и cost<=budget.\ndone допустим после успешного propose_assignment и положительного validate_assignment именно этого предложения.\nПри временной ошибке чтения можно повторить чтение. При assignment_blocked перечитай ресурсы и пересмотри выбор.\nНе придумывай результат инструмента. Не возвращай скрытые рассуждения. История действий и наблюдений передаётся ниже.\n"
+          },
+          {
+            "role": "user",
+            "content": "{\"goal\": \"Создать допустимое предложение по текущей заявке и проверить его. Либо запросить навык, либо сообщить отсутствие решения.\", \"history\": []}"
+          }
+        ],
+        "temperature": 0.2,
+        "max_tokens": 256,
+        "stream": false
+      },
+      "response_content": "{\"type\":\"tool\",\"name\":\"read_ticket\",\"args\":{}}",
+      "usage": {
+        "completion_tokens": 47,
+        "prompt_tokens": 606,
+        "total_tokens": 653,
+        "completion_tokens_details": {
+          "reasoning_tokens": 27
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cached_creation_tokens": 0
+        }
+      }
+    },
+    {
+      "request": {
+        "model": "gpt-6-sol",
+        "messages": [
+          {
+            "role": "system",
+            "content": "Ты управляешь учебной службой заявок. На каждом шаге верни ровно один JSON без Markdown и пояснений.\nИнструменты:\nread_ticket, search_policy, list_resources, validate_assignment: args={}\npropose_assignment: args={\"resource_id\":\"идентификатор ресурса\"}\nДействие: {\"type\":\"tool\",\"name\":\"read_ticket\",\"args\":{}}\nЗавершение: {\"type\":\"finish\",\"status\":\"done\",\"question\":\"\"}\nДругие статусы завершения: needs_input, no_solution.\nСначала прочитай заявку и политику, затем ресурсы. Используй факты из результатов инструментов.\nПри неизвестном навыке завершай needs_input с конкретным вопросом, содержащим слово \"навык\" или \"skill\".\nПри известном навыке и отсутствии допустимых ресурсов завершай no_solution.\nДля решения достаточно любого доступного ресурса с нужным навыком и cost<=budget.\ndone допустим после успешного propose_assignment и положительного validate_assignment именно этого предложения.\nПри временной ошибке чтения можно повторить чтение. При assignment_blocked перечитай ресурсы и пересмотри выбор.\nНе придумывай результат инструмента. Не возвращай скрытые рассуждения. История действий и наблюдений передаётся ниже.\n"
+          },
+          {
+            "role": "user",
+            "content": "{\"goal\": \"Создать допустимое предложение по текущей заявке и проверить его. Либо запросить навык, либо сообщить отсутствие решения.\", \"history\": [{\"step\": 1, \"raw\": \"{\\\"type\\\":\\\"tool\\\",\\\"name\\\":\\\"read_ticket\\\",\\\"args\\\":{}}\", \"action\": {\"type\": \"tool\", \"name\": \"read_ticket\", \"args\": {}}, \"observation\": {\"ok\": true, \"ticket\": {\"id\": \"T-test-11\", \"skill\": \"sql\", \"budget\": 100}}}]}"
+          }
+        ],
+        "temperature": 0.2,
+        "max_tokens": 256,
+        "stream": false
+      }
+    }
+  ],
+  "max_steps": 12
+}

@@ -1,0 +1,2 @@
+{"step": 1, "raw": "{\"type\":\"tool\",\"name\":\"read_ticket\",\"args\":{}}", "action": {"type": "tool", "name": "read_ticket", "args": {}}, "observation": {"ok": true, "ticket": {"id": "T-test-09", "skill": "python", "budget": 100}}}
+{"step": 2, "observation": {"ok": false, "error": "model_error", "exception_type": "HTTPError"}}
